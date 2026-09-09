@@ -1,0 +1,32 @@
+def grow_plant():
+    print("🌱Welcome to your Digital plant Nursery! 🌻")
+    # 1. A list of growth stages using square brackets[]
+    stages = ["Seed🫘", "Sprout🌱", "Small plant🌿", "Blooming Flower🌼"]
+    current_stage = 0 # Start at the first item in out list (index 0)
+
+    while True:
+        print(f"Current Plant statues: {stages[current_stage]}")
+        print("1. Water the plant 💧")
+        print("2. Give it sunshine ☀️")
+        print("3. Quit ❌")
+        choice = input("What do you want to do? (1, 2, or 3): ")
+
+        if choice == "1" or choice == "2":
+            print("Taking care of your plant...")
+            import time
+            print("Waiting...")
+            time.sleep(5) # Pause the program for 5 seconds to build suspense!
+            # If our plant isn't at the final stage yet, grow it!
+            if current_stage < len(stages) -1:
+                current_stage += 1
+                print(f"✨ Success! Your plant grew bigger! ✨\n")
+            else:
+                print(f"🎉 Your plant is already fully grown and beautiful!")
+        elif choice =="3":
+            print("Thank you for playing! Leaving the greenhouse...👋")
+            break
+        else:
+            print("That's not a valid choice, try again!")
+
+# Run the plant game
+grow_plant()
